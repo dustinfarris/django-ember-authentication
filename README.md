@@ -1,6 +1,6 @@
 # Django/Ember Authenticate
 
-A simple how-to-do-it app that demonstrates one way to perform authentication
+A simple how-to-do-it app that demonstrates one way to perform session-based authentication
 in Ember using Django as a backend.  This application uses the latest builds of:
 
 *  [Django][]
