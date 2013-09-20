@@ -9,6 +9,9 @@ STATICFILES_DIRS = (
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'users', 'fixtures'),
+)
 
 SECRET_KEY = 'v6)j@i0-she6pi-l*k2k395cu^*ic&8v1f0h=@q9p%pezu8607'
 DEBUG = True
