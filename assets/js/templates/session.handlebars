@@ -1,0 +1,15 @@
+{{#if isAuthenticated}}
+  <p class="welcome">Welcome back, {{first_name}}!</p>
+  <button class="btn" {{action 'logout'}}>Logout</button>
+{{else}}
+  <form class="form-inline" {{action login on="submit"}}>
+    <div class="form-group">
+      {{input class="username" value=username type="text" placeholder="Username"}}
+    </div>
+    <div class="form-group">
+      {{input class="password" value=password type="password" placeholder="Password"}}
+    </div>
+    {{input class="submit btn" type="submit" value="Login"}}
+  </form>
+  {{#if errorMessage}}<span class="text-danger">{{errorMessage}}</span>{{/if}}
+{{/if}}

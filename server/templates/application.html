@@ -1,0 +1,24 @@
+{% load compress static %}
+
+{% include "head.html" %}
+
+<body>
+
+  <div id="ember"></div>
+
+
+  {# Vendor javascripts #}
+  {% include "jquery.html" %}
+  {% include "csrf.html" %}
+  {% include "ember.html" %}
+
+  {# Application #}
+  <script src="{% static 'js/app.js' %}"></script>
+
+  {# Handlebars templates #}
+  {% compress js %}
+    <script type="text/x-handlebars" src="{% static 'js/templates/application.handlebars' %}"></script>
+    <script id="session" type="text/x-handlebars" src="{% static 'js/templates/session.handlebars' %}"></script>
+  {% endcompress js %}
+</body>
+</html>
