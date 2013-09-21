@@ -73,10 +73,10 @@ a well-built backend, all data will be pre-filtered to the active user before it
 
 ## Acknowledgements
 
-Big thank you to the Ember team and Tom Christie for Django REST Framework.  These two projects have
-had a profound impact on modern web development and are very very exciting to work with.
+Big thank you to the Ember team and [Tom Christie][] for Django REST Framework.  These two projects 
+have had a profound impact on modern web development and are very very exciting to work with.
 
-Also thanks to Toran Billups for creating Ember Data Django REST Adapter without which combining
+Also thanks to [Toran Billups][] for creating Ember Data Django REST Adapter without which combining
 Django and Ember would not be possible—or at least not as straight-forward. Also his [screencast] on 
 integration testing Ember is an absolute must-watch.
 
@@ -86,4 +86,6 @@ integration testing Ember is an absolute must-watch.
 [Ember Data]: http://emberjs.com/builds/#/canary/latest
 [Ember Data Django REST Adapter]: https://github.com/toranb/ember-data-django-rest-adapter/tree/ember1.0
 [virtualenvwrapper]: http://virtualenvwrapper.readthedocs.org/en/latest/
+[Tom Christie]: https://github.com/tomchristie
+[Toran Billups]: https://github.com/toranb
 [screencast]: http://www.toranbillups.com/blog/archive/2013/07/21/Integration-testing-your-emberjs-app-with-QUnit-and-Karma/
