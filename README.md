@@ -1,7 +1,10 @@
 # Django/Ember Authenticate
 
+![CircleCI build status](https://circleci.com/gh/dustinfarris/django-ember-authentication.png)
+
 A simple how-to-do-it app that demonstrates one way to perform session-based authentication
-in Ember using Django as a backend.  This application uses the latest builds of:
+in [Ember](http://emberjs.com) using [Django REST Framework](http://django-rest-framework.org/)
+as a backend.  This application uses the latest builds of:
 
 *  [Django][]
 *  [Ember][]
@@ -46,12 +49,12 @@ token-based solutions I've seen to date have not been pretty. Django's session b
 majority of the work for you, really your only responsibility is the check the username and password
 (which Django has helpers for as well).
 
-"Session"
+### Session
 
-A challenge that came up every way I tried this was preserving the "current user" after successful 
+A challenge I encountered every way I tried this was preserving the "current user" after successful 
 authentication.  Since the current user is really just a manifestation of the current session, I
 decided to call the resource "session" which, in my Ember implementation, has user properties. If
-this sounds confusing it will make more sense when you look at the code.
+this sounds confusing it will make sense when you look at the code.
 
 The session is its own resource, with its own route mapping and controller.  On the server side,
 Django responds to three HTTP methods at the /session/ endpoint: GET, POST, and DELETE. GET gets the
@@ -59,7 +62,7 @@ current session (if there is one), POST checks username/password credentials and
 session. DELETE logs the user out. Using regular HTTP methods this way makes it easy to integrate
 with both Ember and Django REST Framework.
 
-When Ember succesfully authenticates, it queries the appropriate user and sets the session model to
+When Ember successfully authenticates, it queries the appropriate user and sets the session model to
 be that user.  The user's properties then become instantly available to the session template,
 and to anything else with access to the SessionController.
 
@@ -74,8 +77,9 @@ Big thank you to the Ember team and Tom Christie for Django REST Framework.  The
 had a profound impact on modern web development and are very very exciting to work with.
 
 Also thanks to Toran Billups for creating Ember Data Django REST Adapter without which combining
-Django and Ember would not be possible--at least not as easily. Also his [screencast] on integration
-testing Ember is an absolute must-watch.
+Django and Ember would not be possible—or at least not as straight-forward. Also his [screencast] on 
+integration testing Ember is an absolute must-watch.
+
 
 [Django]: https://github.com/django/django/releases/tag/1.6b4
 [Ember]: http://emberjs.com/builds/#/beta/latest
