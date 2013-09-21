@@ -6,9 +6,9 @@ from rest_framework.test import APITestCase
 class SessionViewTest(APITestCase):
     def setUp(self):
         self.user = User.objects.create(
-            username="dustin",
-            first_name="Dustin",
-            last_name="Farris")
+            username="bob",
+            first_name="Bob",
+            last_name="Barker")
         self.user.set_password("correct")
         self.user.save()
 
@@ -37,7 +37,7 @@ class SessionViewTest(APITestCase):
         Should log the user in and return a JSON object with a success
         flag and the user's id.
         """
-        data = {'username': 'dustin', 'password': 'correct'}
+        data = {'username': 'bob', 'password': 'correct'}
         response = self.client.post('/session/', data)
         expected = {'success': True, 'user_id': self.user.id}
         self.assertEqual(response.data, expected)
@@ -48,7 +48,7 @@ class SessionViewTest(APITestCase):
         Should not log the user in and return a JSON object with a
         failing success flag and error message.
         """
-        data = {'username': 'dustin', 'password': 'wrong'}
+        data = {'username': 'bob', 'password': 'wrong'}
         response = self.client.post('/session/', data)
         expected = {'success': False, 'user_id': None, 'message': 'Invalid username or password'}
         self.assertEqual(response.data, expected)
@@ -61,7 +61,7 @@ class SessionViewTest(APITestCase):
         """
         self.user.is_active = False
         self.user.save()
-        data = {'username': 'dustin', 'password': 'correct'}
+        data = {'username': 'bob', 'password': 'correct'}
         response = self.client.post('/session/', data)
         expected = {'success': False, 'user_id': None, 'message': 'Sorry, this account is suspended'}
         self.assertEqual(response.data, expected)

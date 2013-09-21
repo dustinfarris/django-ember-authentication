@@ -17,7 +17,7 @@ class CreateUserTest(APITestCase):
 
 class ReadUserTest(APITestCase):
     def setUp(self):
-        self.user = User.objects.create(username="dustin")
+        self.user = User.objects.create(username="jake")
 
     def test_can_read_user_list(self):
         response = self.client.get(reverse('user-list'))
@@ -30,7 +30,7 @@ class ReadUserTest(APITestCase):
 
 class UpdateUserTest(APITestCase):
     def setUp(self):
-        self.user = User.objects.create(username="dustin", first_name="Dustin")
+        self.user = User.objects.create(username="jake", first_name="Jake")
         self.data = UserSerializer(self.user).data
         self.data.update({'first_name': 'Changed'})
 
@@ -41,7 +41,7 @@ class UpdateUserTest(APITestCase):
 
 class DeleteUserTest(APITestCase):
     def setUp(self):
-        self.user = User.objects.create(username="dustin")
+        self.user = User.objects.create(username="jake")
 
     def test_can_delete_user(self):
         response = self.client.delete(reverse('user-detail', args=[self.user.id]))

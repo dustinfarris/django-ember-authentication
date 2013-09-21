@@ -7,7 +7,7 @@ lint:
 
 test-python:
 	@echo "Running Python tests"
-	python manage.py test
+	python manage.py test --settings=server.test_settings
 	@echo ""
 
 test-js:
