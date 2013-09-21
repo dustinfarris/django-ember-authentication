@@ -15,7 +15,7 @@ test("user gives bad credentials and receives error message", function() {
 
     visit("/").then(function() {
         fillIn(".username", "dustin");
-        fillIn(".password", "right");
+        fillIn(".password", "wrong");
         return click(".submit");
     }).then(function() {
         equal(find(".text-danger").text(), "bad user!", "error message was not detected")
@@ -30,7 +30,7 @@ test("user logs in and receives welcome message", function() {
 
     visit("/").then(function() {
         fillIn(".username", "dustin");
-        fillIn(".password", "wrong");
+        fillIn(".password", "right");
         return click('.submit');
     }).then(function() {
         equal(find("p.welcome").text(), "Welcome back, Dustin!", "welcome message was not detected");
