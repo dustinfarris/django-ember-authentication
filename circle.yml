@@ -1,6 +1,8 @@
 machine:
   python:
-    version: 3.3.2, 2.7.3
+    version: 
+      - 3.3.2
+      - 2.7.3
 
 dependencies:
   override:
