@@ -3,8 +3,8 @@
 ![CircleCI build status](https://circleci.com/gh/dustinfarris/django-ember-authentication.png)
 
 A simple how-to-do-it app that demonstrates one way to perform session-based authentication
-in [Ember](http://emberjs.com) using [Django REST Framework](http://django-rest-framework.org/)
-as a backend.  This application uses the latest builds of:
+in [Ember](http://emberjs.com) using [Django](http://djangoproject.com/) as a backend.  This 
+application uses the latest builds of:
 
 *  [Django][]
 *  [Ember][]
