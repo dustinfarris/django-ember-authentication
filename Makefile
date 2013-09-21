@@ -7,12 +7,12 @@ lint:
 
 test-python:
 	@echo "Running Python tests"
-	python manage.py test --settings=server.test_settings
+	python manage.py test --settings=server.test_settings || exit 1
 	@echo ""
 
 test-js:
 	@echo "Running QUnit Javascript tests"
-	node_modules/.bin/karma start --reporters=dots
+	node_modules/.bin/karma start --reporters=dots || exit 1
 	@echo ""
 
 develop:
