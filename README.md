@@ -66,11 +66,6 @@ When Ember successfully authenticates, it queries the appropriate user and sets 
 be that user.  The user's properties then become instantly available to the session template,
 and to anything else with access to the SessionController.
 
-## Notes
-
-I've found that having the "current user" readily available is actually not all that important. With
-a well-built backend, all data will be pre-filtered to the active user before it hits Ember.
-
 ## Acknowledgements
 
 Big thank you to the Ember team and [Tom Christie][] for Django REST Framework.  These two projects 
